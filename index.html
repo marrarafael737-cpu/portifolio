@@ -455,7 +455,177 @@
 
         .edu-item p { color: var(--gray-light); font-size: 0.95rem; }
 
-        /* Contact / Footer */
+        /* ✅ CONTACT FORM STYLES */
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: start;
+        }
+
+        .contact-info {
+            background: var(--dark-light);
+            padding: 35px;
+            border-radius: 16px;
+            border: 1px solid rgba(56, 189, 248, 0.1);
+        }
+
+        .contact-info h3 {
+            color: var(--accent);
+            margin-bottom: 25px;
+            font-size: 1.4rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 25px;
+            padding-bottom: 25px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .contact-item:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+
+        .contact-icon {
+            width: 45px;
+            height: 45px;
+            background: rgba(56, 189, 248, 0.1);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+
+        .contact-item a {
+            color: var(--light);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .contact-item a:hover { color: var(--accent); }
+
+        .contact-form {
+            background: var(--dark-light);
+            padding: 35px;
+            border-radius: 16px;
+            border: 1px solid rgba(56, 189, 248, 0.1);
+        }
+
+        .contact-form h3 {
+            color: var(--accent);
+            margin-bottom: 25px;
+            font-size: 1.4rem;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: var(--light);
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 14px 18px;
+            background: var(--dark);
+            border: 2px solid rgba(56, 189, 248, 0.2);
+            border-radius: 8px;
+            color: var(--light);
+            font-size: 1rem;
+            font-family: inherit;
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.2);
+        }
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: var(--gray-light);
+        }
+
+        .form-group textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 14px 32px;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .submit-btn:active {
+            transform: translateY(0);
+        }
+
+        .submit-btn:disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .form-message {
+            margin-top: 15px;
+            padding: 12px 18px;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            display: none;
+        }
+
+        .form-message.success {
+            background: rgba(34, 197, 94, 0.15);
+            color: var(--success);
+            border: 1px solid var(--success);
+            display: block;
+        }
+
+        .form-message.error {
+            background: rgba(239, 68, 68, 0.15);
+            color: #ef4444;
+            border: 1px solid #ef4444;
+            display: block;
+        }
+
+        /* Footer */
         footer {
             text-align: center;
             padding: 70px 20px 40px;
@@ -543,6 +713,9 @@
             
             .project-header { flex-direction: column; }
             .project-links { flex-direction: column; gap: 12px; }
+            
+            .contact-container { grid-template-columns: 1fr; gap: 30px; }
+            .form-row { grid-template-columns: 1fr; }
         }
 
         /* Scroll Indicator */
@@ -722,7 +895,7 @@
                 </div>
             </div>
 
-            <!-- Project 3 - NOVO: Caixa de Supermercado -->
+            <!-- Project 3: Caixa de Supermercado -->
             <div class="project-card">
                 <div class="project-header">
                     <h3>🛒 Caixa de Supermercado</h3>
@@ -761,7 +934,6 @@
                 </div>
             </div>
 
-
         </div>
     </section>
 
@@ -782,14 +954,98 @@
         </div>
     </section>
 
-    <!-- Contact / Footer -->
-    <footer id="contato">
-        <h2>Vamos Conversar? 🤝</h2>
+    <!-- ✅ CONTACT SECTION WITH FORM -->
+    <section id="contato">
+        <div class="section-header">
+            <h2>Entre em Contato</h2>
+            <p class="section-subtitle">Vamos conversar sobre oportunidades, projetos ou apenas trocar uma ideia sobre tecnologia!</p>
+        </div>
+        
+        <div class="contact-container">
+            <!-- Contact Info -->
+            <div class="contact-info">
+                <h3>📬 Informações de Contato</h3>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">📧</div>
+                    <div>
+                        <strong>E-mail</strong><br>
+                        <a href="mailto:marrarafale737@gmail.com">marrarafael737@gmail.com</a>
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">💼</div>
+                    <div>
+                        <strong>LinkedIn</strong><br>
+                        <a href="https://linkedin.com/in/rafaelmarra" target="_blank" rel="noopener noreferrer">linkedin.com/in/rafaelmarra</a>
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">💻</div>
+                    <div>
+                        <strong>GitHub</strong><br>
+                        <a href="https://github.com/marrarafael737-cpu" target="_blank" rel="noopener noreferrer">github.com/marrarafael737-cpu</a>
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">📍</div>
+                    <div>
+                        <strong>Localização</strong><br>
+                        Brasil 🇧🇷
+                    </div>
+                </div>
+            </div>
+
+           <!-- Contact Form -->
+<div class="contact-form">
+    <h3>✉️ Envie uma Mensagem</h3>
+    
+    <!-- ✅ FORM CORRETO - SEM ACTION, SEM API -->
+    <form action="https://formspree.io/f/mdapkekw" method="post" id="contactForm">
+        
+       <input type="hidden" name="_subject" value="Nova mensagem do portfólio!">
+
+        <div class="form-row">
+            <div class="form-group">
+                <label for="name">Nome *</label>
+                <input type="text" id="name" name="name" placeholder="Seu nome" required>
+            </div>
+            <div class="form-group">
+                <label for="email">E-mail *</label>
+                <input type="email" id="email" name="email" placeholder="seu@email.com" required>
+            </div>
+        </div>
+        
+        <div class="form-group">
+            <label for="subject">Assunto *</label>
+            <input type="text" id="subject" name="subject" placeholder="Sobre o que deseja falar?" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="message">Mensagem *</label>
+            <textarea id="message" name="message" placeholder="Escreva sua mensagem aqui..." required></textarea>
+        </div>
+        
+        <button type="submit" class="submit-btn">
+            📤 Enviar Mensagem
+        </button>
+        
+        <div id="formMessage" class="form-message"></div>
+    </form>
+</div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
         <p class="contact-text">Estou aberto a oportunidades de estágio, projetos colaborativos e networking na área de tecnologia.</p>
         
         <div class="social-links">
             <a href="mailto:marrarafale737@gmail.com">
-                📧 marrarafale737@gmail.com
+                📧 Email
             </a>
             <a href="https://linkedin.com/in/rafaelmarra" target="_blank" rel="noopener noreferrer">
                 💼 LinkedIn
@@ -799,53 +1055,8 @@
             </a>
         </div>
         
-        <p class="copyright">© 2026 Rafael Marra.</p>
+        <p class="copyright">© 2026 Rafael Marra. Todos os direitos reservados.</p>
     </footer>
 
-    <script>
-        // Mobile Menu Toggle
-        const menuToggle = document.getElementById('menuToggle');
-        const navLinks = document.getElementById('navLinks');
-        
-        menuToggle.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-        });
-
-        // Close menu when clicking a link
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', () => {
-                navLinks.classList.remove('active');
-            });
-        });
-
-        // Smooth scroll for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }
-            });
-        });
-
-        // Simple animation on scroll
-        const observerOptions = { threshold: 0.1 };
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.card, .project-card, .edu-item').forEach(el => {
-            el.style.opacity = '0';
-            el.style.transform = 'translateY(20px)';
-            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-            observer.observe(el);
-        });
-    </script>
 </body>
 </html>
